@@ -124,9 +124,46 @@
         height: 240px;
       }
     }
+
+    .credit {
+        position: fixed;
+        bottom: 10px;
+        right: 15px;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: right;
+        line-height: 1.4;
+        z-index: 100;
+        pointer-events: none;
+    }
+
+    .announcement {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 12px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 100%;
+    width: fit-content;
+    }
+
   </style>
 </head>
 <body>
+    <div class="announcement">
+        This page will be up until Rumble Studio asks me to take it down.<br />
+        I will start updating it with dev blogs and more about BGSI.
+    </div>      
+
   <div class="container">
     <img src="your-logo.png" alt="Game Logo" class="logo" />
     <h1>Bubble Gum Simulator <span class="highlight">INFINITY</span></h1>
@@ -136,6 +173,11 @@
     <p>This website is not related to Rumble Studio. If someone from Rumble Studio does not like it, please let me know and I will take the page down.</p>
     <p>Discord User: <span class="highlight">chosentechies</span></p>
   </div>
+
+  <div class="credit">
+    Made by <span class="highlight">Urmoit</span>. Not related to Rumble Studio.<br/>
+    If you clone and modify this site, please give credit to <span class="highlight">Urmoit</span> for making the site open source.
+  </div>    
 
   <!-- Audio -->
   <audio id="outroMusic" src="outro.mp3"></audio>
