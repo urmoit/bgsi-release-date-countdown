@@ -8,7 +8,7 @@
     <!-- Open Graph Meta Tags (for Discord and other platforms) -->
     <meta property="og:title" content="Bubble Gum Simulator INFINITY – Release" />
     <meta property="og:description" content="Bubble Gum Simulator INFINITY is out now! Play now and experience the bubble popping fun!" />
-    <meta property="og:image" content="https://i.imgur.com/51Jh9Z3.png" />
+    <meta property="og:image" content="https://i.imgur.com/KMQvf3y.png" />
     <meta property="og:url" content="https://urmoit.github.io/bgsi-release-date-countdown/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Bubble Gum Simulator INFINITY" />
@@ -18,7 +18,7 @@
     <meta name="twitter:site" content="@TanUrmo" />
     <meta name="twitter:title" content="Bubble Gum Simulator INFINITY – Release" />
     <meta name="twitter:description" content="Bubble Gum Simulator INFINITY is out now! Play now and experience the bubble popping fun!" />
-    <meta name="twitter:image" content="https://i.imgur.com/51Jh9Z3.png" />
+    <meta name="twitter:image" content="https://i.imgur.com/KMQvf3y.png" />
     <meta name="twitter:url" content="https://urmoit.github.io/bgsi-release-date-countdown/" />
 
   <style>
@@ -130,7 +130,6 @@
     <div class="container">
       <img src="your-logo.png" alt="Game Logo" class="logo" />
       <h1>Bubble Gum Simulator <span class="highlight">INFINITY</span></h1>
-      <p id="launchTimeText">Loading launch time...</p> <!-- 👈 Dynamic time -->
       <div id="countdown">Loading countdown...</div>
       <button id="playButton" onclick="window.location.href='https://www.roblox.com/games/85896571713843/Bubble-Gum-Simulator-INFINITY'">Play Now</button>
       <iframe src="https://www.youtube.com/embed/-2B4Sis801c?si=eiqdVcAO4XgWXNb_" title="YouTube video player" allowfullscreen></iframe>
@@ -164,15 +163,6 @@
           clearInterval(interval);
         }
       }
-  
-      function updateLaunchText() {
-        const localTime = new Date();
-        localTime.setHours(23, 0, 0, 0); // 11:00 PM
-        const timeString = localTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        document.getElementById('launchTimeText').innerHTML = `Launching today at <span class="highlight">${timeString}</span> (your local time)`;
-      }
-  
-      updateLaunchText();
       const interval = setInterval(updateCountdown, 1000);
       updateCountdown();
     </script>
