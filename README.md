@@ -14,7 +14,7 @@ Welcome to the **official (fan-made)** release site for **Bubble Gum Simulator I
 ## 🚀 About This Project
 
 This is a simple, responsive HTML/CSS/JS landing page that features:
-- 🕒 A dynamic countdown timer to the game's daily release time (11:00 PM local time)
+- 🕒 A dynamic countdown timer to the game's daily release time
 - 🎮 A **Play Now** button that becomes available after countdown
 - 📺 Embedded YouTube video for showcasing the game
 - 🔊 Audio support (optional outro music when release is near)
