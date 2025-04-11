@@ -1,41 +1,58 @@
 # 🎈 Bubble Gum Simulator INFINITY – Release Page
+[![GitHub stars](https://img.shields.io/github/stars/urmoit/bgsi-release-date-countdown?style=flat-square)](https://github.com/urmoit/bgsi-release-date-countdown/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/urmoit/bgsi-release-date-countdown?style=flat-square)](https://github.com/urmoit/bgsi-release-date-countdown/network)
+[![Live Website](https://img.shields.io/badge/View%20Live%20Page-%F0%9F%8C%90-blue?style=flat-square)](https://urmoit.github.io/bgsi-release-date-countdown/)
 
-Welcome to the **official (fan-made)** release site for **Bubble Gum Simulator INFINITY (BGSI)**!
+Welcome to the **fan-made release page** for **Bubble Gum Simulator INFINITY (BGSI)** – a page made by the community, for the community!
 
-> ⚠️ This page is not affiliated with Rumble Studio. If someone from Rumble Studio asks for it to be taken down, it will be removed immediately.
-
----
-
-## 🌐 Live Site
-👉 [https://urmoit.github.io/bgsi-release-date-countdown/](https://urmoit.github.io/bgsi-release-date-countdown/)
+> ⚠️ **Disclaimer:** This project is not affiliated with, endorsed by, or connected to **Rumble Studios**. If you're a member of Rumble Studios and want this taken down, please contact me via Discord (`chosentechies`) and I will respectfully remove it.
 
 ---
 
-## 🚀 About This Project
+## 🔗 Live Website
 
-This is a simple, responsive HTML/CSS/JS landing page that features:
-- 🕒 A dynamic countdown timer to the game's daily release time
-- 🎮 A **Play Now** button that becomes available after countdown
-- 📺 Embedded YouTube video for showcasing the game
-- 🔊 Audio support (optional outro music when release is near)
-- 📝 Disclaimer message about Rumble Studio
-- 💬 Discord contact info
-- 📢 A floating announcement bar for updates and notices
-- 👤 Credit footer for cloning & modification notice
+▶️ Visit here: **[https://urmoit.github.io/bgsi-release-date-countdown/](https://urmoit.github.io/bgsi-release-date-countdown/)**
 
 ---
 
-## 🧠 Tech Stack
+## 📦 About This Project
 
-- HTML5
-- CSS3 (with responsive design)
-- JavaScript (Vanilla JS)
-- No frameworks or dependencies!
+This site acts as a countdown and launch page for **BGSI** and is intended to:
+- 🔥 Build hype around the game with a daily countdown
+- 📺 Showcase teaser content via embedded YouTube video
+- 🎮 Offer a direct link to play the game on Roblox
+- 📢 Display timely announcements (like dev blogs, future updates)
+- 💬 Give players a way to connect or provide feedback
+- ❤️ Show some love from the community
 
 ---
 
-## 🛠️ How to Use or Clone
+## 💻 Features
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/bgsi-release-date-countdown.git
+- 🕒 **Live Countdown:** Automatically resets every day to countdown to 11:00 PM (local time).
+- 🎮 **Play Now Button:** Hidden until the game is live, then displayed with a smooth UI reveal.
+- 📺 **Embedded Video:** Preview BGSI content or trailers from YouTube.
+- 🔊 **Outro Audio:** Optional music cue when the game is about to launch.
+- 🧊 **Glassmorphism Design:** A sleek modern UI with blur and shadow effects.
+- 📢 **Floating Announcement Bar:** Keep users informed with update messages.
+- 👣 **Attribution Footer:** Respectful licensing and cloning notice for open-source usage.
+
+---
+
+## 🛠️ Technologies Used
+
+| Tech      | Description                          |
+|-----------|--------------------------------------|
+| HTML5     | Page structure and content           |
+| CSS3      | Responsive layout and styling        |
+| JavaScript | Dynamic countdown and button logic  |
+| GitHub Pages | Free static hosting                |
+
+---
+
+## 📂 How to Clone and Run Locally
+
+```bash
+git clone https://github.com/urmoit/bgsi-release-date-countdown.git
+cd bgsi-release-date-countdown
+open index.html
