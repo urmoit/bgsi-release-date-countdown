@@ -37,6 +37,7 @@
       align-items: center;
       justify-content: center;
       padding: 40px 10px;
+      flex-direction: column;
     }
 
     .container {
@@ -72,15 +73,8 @@
       font-size: 1.2rem;
     }
 
-    #countdown {
-      font-size: 1.8rem;
-      margin-bottom: 25px;
-      color: #ffd700;
-      display: none; /* Hide the countdown */
-    }
-
     #playButton {
-      display: inline-block; /* Show Play Now button */
+      display: none;
       padding: 15px 40px;
       background-color: #ff4ae5;
       color: white;
@@ -103,13 +97,53 @@
       border-radius: 12px;
     }
 
+    /* Dev Blog Section Styles */
+    .dev-blog-container {
+      max-width: 700px;
+      width: 100%;
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .dev-blog-container h2,  .dev-blog-container h3{
+      text-align: center;
+    }
+
+    .dev-blog-post {
+      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    .dev-blog-post:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dev-blog-post h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .dev-blog-post p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
       }
 
-      #countdown {
-        font-size: 1.4rem;
+      iframe {
+        height: 240px;
       }
 
       #playButton {
@@ -121,40 +155,25 @@
         width: 140px;
       }
 
-      iframe {
-        height: 240px;
+      .dev-blog-post h3 {
+        font-size: 1.5rem;
+      }
+
+      .dev-blog-post p {
+        font-size: 0.9rem;
       }
     }
 
     .credit {
-        position: fixed;
-        bottom: 10px;
-        right: 15px;
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.6);
-        text-align: right;
-        line-height: 1.4;
-        z-index: 100;
-        pointer-events: none;
-    }
-
-    .announcement {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 12px 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 100%;
-    width: fit-content;
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: right;
+      line-height: 1.4;
+      z-index: 100;
+      pointer-events: none;
     }
 
   </style>
@@ -169,7 +188,7 @@
     <img src="your-logo.png" alt="Game Logo" class="logo" />
     <h1>Bubble Gum Simulator <span class="highlight">INFINITY</span></h1>
     <!-- Countdown hidden now -->
-    <div id="countdown">Loading countdown...</div>
+    <!-- <div id="countdown">Loading countdown...</div>  -->
     <button id="playButton" onclick="window.location.href='https://www.roblox.com/games/85896571713843/Bubble-Gum-Simulator-INFINITY'">Play Now</button>
     <iframe src="https://www.youtube.com/embed/-2B4Sis801c?si=eiqdVcAO4XgWXNb_" title="YouTube video player" allowfullscreen></iframe>
     <p>This website is not related to Rumble Studio. If someone from Rumble Studio does not like it, please let me know and I will take the page down.</p>
@@ -180,6 +199,18 @@
     Made by <span class="highlight">Urmoit</span>. Not related to Rumble Studio.<br/>
     If you clone and modify this site, please give credit to <span class="highlight">Urmoit</span> for making the site open source.
   </div>    
+
+  <!-- Dev Blog Section -->
+  <div class="dev-blog-container">
+    <h2>Dev Blogs</h2>
+    <h3>No Dev Blogs At The Moment</h3>
+
+    <!-- <div class="dev-blog-post">
+      <h3>Dev Blog #1: Upcoming Updates</h3>
+      <p>Details about upcoming features will be posted here soon!</p>
+    </div> -->
+
+  </div>
 
   <!-- Audio -->
   <audio id="outroMusic" src="outro.mp3"></audio>
