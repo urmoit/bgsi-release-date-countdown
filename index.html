@@ -76,10 +76,11 @@
       font-size: 1.8rem;
       margin-bottom: 25px;
       color: #ffd700;
+      display: none; /* Hide the countdown */
     }
 
     #playButton {
-      display: none;
+      display: inline-block; /* Show Play Now button */
       padding: 15px 40px;
       background-color: #ff4ae5;
       color: white;
@@ -167,6 +168,7 @@
   <div class="container">
     <img src="your-logo.png" alt="Game Logo" class="logo" />
     <h1>Bubble Gum Simulator <span class="highlight">INFINITY</span></h1>
+    <!-- Countdown hidden now -->
     <div id="countdown">Loading countdown...</div>
     <button id="playButton" onclick="window.location.href='https://www.roblox.com/games/85896571713843/Bubble-Gum-Simulator-INFINITY'">Play Now</button>
     <iframe src="https://www.youtube.com/embed/-2B4Sis801c?si=eiqdVcAO4XgWXNb_" title="YouTube video player" allowfullscreen></iframe>
@@ -183,43 +185,40 @@
   <audio id="outroMusic" src="outro.mp3"></audio>
 
   <script>
-    function updateCountdown() {
-      const now = new Date();
+    // The countdown function is disabled now, but remains in the code for future use.
+    // function updateCountdown() {
+    //   const now = new Date();
+    //   const releaseTime = new Date();
+    //   releaseTime.setHours(23, 0, 0, 0); // 11:00 PM local time
 
-      // Set the release time to 11:00 PM local time today
-      const releaseTime = new Date();
-      releaseTime.setHours(23, 0, 0, 0); // 11:00 PM local time
+    //   if (now.getHours() >= 23) {
+    //     releaseTime.setDate(releaseTime.getDate() + 1);
+    //   }
 
-      // If it's already past 11:00 PM, set the release time to 11:00 PM the next day
-      if (now.getHours() >= 23) {
-        releaseTime.setDate(releaseTime.getDate() + 1);
-      }
+    //   const diff = releaseTime - now;
+    //   const hours = Math.floor(diff / (1000 * 60 * 60));
+    //   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    //   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      const diff = releaseTime - now;
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    //   const countdownEl = document.getElementById('countdown');
+    //   const playBtn = document.getElementById('playButton');
+    //   const outroMusic = document.getElementById('outroMusic');
 
-      const countdownEl = document.getElementById('countdown');
-      const playBtn = document.getElementById('playButton');
-      const outroMusic = document.getElementById('outroMusic');
+    //   if (diff > 0) {
+    //     countdownEl.textContent = `⏳ ${hours}h ${minutes}m ${seconds}s left`;
+    //   } else {
+    //     countdownEl.textContent = "🎉 Released!";
+    //     playBtn.style.display = 'inline-block';
+    //     clearInterval(interval);
+    //   }
 
-      if (diff > 0) {
-        countdownEl.textContent = `⏳ ${hours}h ${minutes}m ${seconds}s left`;
-      } else {
-        countdownEl.textContent = "🎉 Released!";
-        playBtn.style.display = 'inline-block';
-        clearInterval(interval);
-      }
+    //   if (diff <= 58000 && diff > 57000) {
+    //     outroMusic.play();
+    //   }
+    // }
 
-      // Play outro music when 58 seconds are left
-      if (diff <= 58000 && diff > 57000) {
-        outroMusic.play();
-      }
-    }
-
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
+    // const interval = setInterval(updateCountdown, 1000);
+    // updateCountdown();
   </script>
 </body>
 </html>
