@@ -56,3 +56,16 @@ This site acts as a countdown and launch page for **BGSI** and is intended to:
 git clone https://github.com/urmoit/bgsi-release-date-countdown.git
 cd bgsi-release-date-countdown
 open index.html
+```
+---
+
+## 🚀 Future Updates
+
+The page will continue to evolve as BGSI’s updates progress. Future improvements include:
+
+- 🔄 **Interactive Features:** Adding live event tracking and notifications.
+- 🎨 **New Visual Enhancements:** Possible additions of dynamic animations and new design elements.
+- 🌍 **Multi-language Support:** Expanding the page to support multiple languages for a global audience.
+- 📱 **Mobile Optimization:** Ensuring the page is fully optimized for mobile users to improve the experience on phones and tablets.
+
+Stay tuned for more exciting features in future releases!
