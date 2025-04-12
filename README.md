@@ -18,22 +18,22 @@ Welcome to the **fan-made release page** for **Bubble Gum Simulator INFINITY (BG
 ## 📦 About This Project
 
 This site acts as a countdown and launch page for **BGSI** and is intended to:
-- 🔥 Build hype around the game with a daily countdown
-- 📺 Showcase teaser content via embedded YouTube video
-- 🎮 Offer a direct link to play the game on Roblox
-- 📢 Display timely announcements (like dev blogs, future updates)
-- 💬 Give players a way to connect or provide feedback
-- ❤️ Show some love from the community
+- 🔥 Build hype around the game with a countdown that will appear once the new update release date is announced.
+- 📺 Showcase teaser content via embedded YouTube video.
+- 🎮 Offer a direct link to play the game on Roblox.
+- 📢 Display timely announcements (like dev blogs, future updates).
+- 💬 Give players a way to connect or provide feedback.
+- ❤️ Show some love from the community.
 
 ---
 
 ## 💻 Features
 
-- 🕒 **Live Countdown:** Automatically resets every day to countdown to 11:00 PM (local time).
+- 🕒 **Countdown:** The countdown will appear only when the release date for the new update is known.
 - 🎮 **Play Now Button:** Hidden until the game is live, then displayed with a smooth UI reveal.
 - 📺 **Embedded Video:** Preview BGSI content or trailers from YouTube.
 - 🔊 **Outro Audio:** Optional music cue when the game is about to launch.
-- 🧊 **Glassmorphism Design:** A sleek modern UI with blur and shadow effects.
+- 🧊 **Glassmorphism Design:**  A sleek modern UI with blur and shadow effects.
 - 📢 **Floating Announcement Bar:** Keep users informed with update messages.
 - 👣 **Attribution Footer:** Respectful licensing and cloning notice for open-source usage.
 
