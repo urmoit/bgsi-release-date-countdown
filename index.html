@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bubble Gum Simulator INFINITY – Release</title>
+  <title>Bubble Gum Simulator INFINITY – Easter Event</title>
+  <!-- Add inside <head> -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph Meta Tags (for Discord and other platforms) -->
-  <meta property="og:title" content="Bubble Gum Simulator INFINITY – Release" />
+  <meta property="og:title" content="Bubble Gum Simulator INFINITY – Easter Event" />
   <meta property="og:description" content="Bubble Gum Simulator INFINITY is out now! Play now and experience the bubble popping fun!" />
   <meta property="og:image" content="https://i.imgur.com/51Jh9Z3.png" />
   <meta property="og:url" content="https://urmoit.github.io/bgsi-release-date-countdown/" />
@@ -16,7 +18,7 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TanUrmo" />
-  <meta name="twitter:title" content="Bubble Gum Simulator INFINITY – Release" />
+  <meta name="twitter:title" content="Bubble Gum Simulator INFINITY – Easter Event" />
   <meta name="twitter:description" content="Bubble Gum Simulator INFINITY is out now! Play now and experience the bubble popping fun!" />
   <meta name="twitter:image" content="https://i.imgur.com/51Jh9Z3.png" />
   <meta name="twitter:url" content="https://urmoit.github.io/bgsi-release-date-countdown/" />
@@ -31,7 +33,7 @@
     body {
       height: 100vh;
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: white;
       display: flex;
       align-items: center;
@@ -74,20 +76,20 @@
     }
 
     #playButton {
-      display: none;
       padding: 15px 40px;
-      background-color: #ff4ae5;
-      color: white;
+      background: linear-gradient(135deg, #ff4ae5, #ff82f1);
       font-size: 1.2rem;
+      font-weight: 600;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(255, 74, 229, 0.4);
     }
 
     #playButton:hover {
-      background-color: #ff70ee;
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #ff6eee, #ffa3f3);
     }
 
     iframe {
@@ -97,7 +99,6 @@
       border-radius: 12px;
     }
 
-    /* Dev Blog Section Styles */
     .dev-blog-container {
       max-width: 700px;
       width: 100%;
@@ -110,7 +111,7 @@
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .dev-blog-container h2,  .dev-blog-container h3{
+    .dev-blog-container h2, .dev-blog-container h3 {
       text-align: center;
     }
 
@@ -121,6 +122,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s;
+      animation: fadeInUp 0.5s ease;
     }
 
     .dev-blog-post:hover {
@@ -137,24 +139,34 @@
       margin-bottom: 15px;
     }
 
-    /* Announcement */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .announcement {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 12px 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 100%;
-    width: fit-content;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 12px 20px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 100%;
+      width: fit-content;
     }
 
     @media (max-width: 600px) {
@@ -184,7 +196,6 @@
       }
     }
 
-    /* Credit */
     .credit {
       position: fixed;
       bottom: 10px;
@@ -197,21 +208,45 @@
       pointer-events: none;
     }
 
+    #countdown {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      padding: 25px 35px;
+      border: 3px solid #ff4ae5;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(255, 74, 229, 0.35);
+      display: inline-block;
+      color: #ffffff;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(255, 74, 229, 0.35);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(255, 74, 229, 0.6);
+      }
+    }
+
   </style>
 </head>
 <body>
-    <div class="announcement">
-        This page will be up until Rumble Studio asks me to take it down.<br />
-        I will start updating it with dev blogs and more about BGSI.
-    </div>      
+  <div class="announcement">
+    This page will be up until Rumble Studio asks me to take it down.<br />
+    I will start updating it with dev blogs and more about BGSI.
+  </div>
 
   <div class="container">
     <img src="your-logo.png" alt="Game Logo" class="logo" />
-    <h1>Bubble Gum Simulator <span class="highlight">INFINITY</span></h1>
-    <!-- Countdown hidden now -->
-    <!-- <div id="countdown">Loading countdown...</div>  -->
+    <h1>Bubble Gum Simulator <span class="highlight">INFINITY</span> – Easter Event</h1>
+    <div id="countdown">Loading countdown...</div>
     <button id="playButton" onclick="window.location.href='https://www.roblox.com/games/85896571713843/Bubble-Gum-Simulator-INFINITY'">Play Now</button>
-    <iframe src="https://www.youtube.com/embed/-2B4Sis801c?si=eiqdVcAO4XgWXNb_" title="YouTube video player" allowfullscreen></iframe>
     <p>This website is not related to Rumble Studio. If someone from Rumble Studio does not like it, please let me know and I will take the page down.</p>
     <p>Discord User: <span class="highlight">chosentechies</span></p>
   </div>
@@ -221,56 +256,43 @@
     If you clone and modify this site, please give credit to <span class="highlight">Urmoit</span> for making the site open source.
   </div>    
 
-  <!-- Dev Blog Section -->
   <div class="dev-blog-container">
     <h2>Dev Blogs</h2>
-    <h3>No Dev Blogs At The Moment</h3>
 
-    <!-- <div class="dev-blog-post">
-      <h3>Dev Blog #1: Upcoming Updates</h3>
-      <p>Details about upcoming features will be posted here soon!</p>
-    </div> -->
-
+    <div class="dev-blog-post">
+      <h3>Dev Blog #1: Easter Event</h3>
+      <p>X</p>
+    </div>
   </div>
 
-  <!-- Audio -->
   <audio id="outroMusic" src="outro.mp3"></audio>
 
   <script>
-    // The countdown function is disabled now, but remains in the code for future use.
-    // function updateCountdown() {
-    //   const now = new Date();
-    //   const releaseTime = new Date();
-    //   releaseTime.setHours(23, 0, 0, 0); // 11:00 PM local time
+    function updateCountdown() {
+      const countdownEl = document.getElementById('countdown');
+      const outroMusic = document.getElementById('outroMusic');
+      const now = new Date();
+      const releaseTime = new Date("April 18, 2025 23:00:00");
 
-    //   if (now.getHours() >= 23) {
-    //     releaseTime.setDate(releaseTime.getDate() + 1);
-    //   }
+      const diff = releaseTime - now;
 
-    //   const diff = releaseTime - now;
-    //   const hours = Math.floor(diff / (1000 * 60 * 60));
-    //   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    //   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      if (diff > 0) {
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        countdownEl.textContent = `⏳ ${hours}h ${minutes}m ${seconds}s left`;
+      } else {
+        countdownEl.textContent = "🎉 Released!";
+        clearInterval(interval);
+      }
 
-    //   const countdownEl = document.getElementById('countdown');
-    //   const playBtn = document.getElementById('playButton');
-    //   const outroMusic = document.getElementById('outroMusic');
+      if (diff <= 58000 && diff > 57000) {
+        outroMusic.play();
+      }
+    }
 
-    //   if (diff > 0) {
-    //     countdownEl.textContent = `⏳ ${hours}h ${minutes}m ${seconds}s left`;
-    //   } else {
-    //     countdownEl.textContent = "🎉 Released!";
-    //     playBtn.style.display = 'inline-block';
-    //     clearInterval(interval);
-    //   }
-
-    //   if (diff <= 58000 && diff > 57000) {
-    //     outroMusic.play();
-    //   }
-    // }
-
-    // const interval = setInterval(updateCountdown, 1000);
-    // updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
