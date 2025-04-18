@@ -267,32 +267,69 @@
 
   <audio id="outroMusic" src="outro.mp3"></audio>
 
-  <script>
-    function updateCountdown() {
-      const countdownEl = document.getElementById('countdown');
-      const outroMusic = document.getElementById('outroMusic');
-      const now = new Date();
-      const releaseTime = new Date("April 18, 2025 23:00:00");
+<script>
+  // Force everything to use Europe/Tallinn time
+  const targetHour = 23;
 
-      const diff = releaseTime - now;
+  async function getTallinnTime() {
+    // Use the Intl API to get Tallinn time from the user's local clock
+    const now = new Date();
+    const tallinnTime = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Europe/Tallinn",
+      hour12: false,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    }).format(now);
 
-      if (diff > 0) {
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        countdownEl.textContent = `⏳ ${hours}h ${minutes}m ${seconds}s left`;
-      } else {
-        countdownEl.textContent = "🎉 Released!";
-        clearInterval(interval);
-      }
+    // Convert formatted string back to Date object
+    const [date, time] = tallinnTime.split(", ");
+    const [month, day, year] = date.split("/");
+    const [hour, minute, second] = time.split(":");
 
-      if (diff <= 58000 && diff > 57000) {
-        outroMusic.play();
-      }
+    return new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}+03:00`);
+  }
+
+  async function getTargetTime() {
+    const now = await getTallinnTime();
+    const target = new Date(now);
+    target.setHours(targetHour, 0, 0, 0); // Set to 23:00
+
+    if (now > target) {
+      target.setDate(target.getDate() + 1); // If past 23:00, go to tomorrow
     }
 
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+    return target;
+  }
+
+  async function updateCountdown() {
+    const now = await getTallinnTime();
+    const target = await getTargetTime();
+
+    const timeLeft = target - now;
+
+    if (timeLeft <= 0) {
+      document.getElementById("countdown").innerText = "Time's up!";
+      clearInterval(timer);
+      return;
+    }
+
+    const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+    const seconds = Math.floor((timeLeft / 1000) % 60);
+
+    document.getElementById("countdown").innerText =
+      `${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  updateCountdown();
+  const timer = setInterval(updateCountdown, 1000);
+</script>
+
+  
+
 </body>
 </html>
