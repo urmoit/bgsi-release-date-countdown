@@ -267,69 +267,67 @@
 
   <audio id="outroMusic" src="outro.mp3"></audio>
 
-<script>
-  // Force everything to use Europe/Tallinn time
-  const targetHour = 23;
-
-  async function getTallinnTime() {
-    // Use the Intl API to get Tallinn time from the user's local clock
-    const now = new Date();
-    const tallinnTime = new Intl.DateTimeFormat("en-US", {
-      timeZone: "Europe/Tallinn",
-      hour12: false,
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    }).format(now);
-
-    // Convert formatted string back to Date object
-    const [date, time] = tallinnTime.split(", ");
-    const [month, day, year] = date.split("/");
-    const [hour, minute, second] = time.split(":");
-
-    return new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}+03:00`);
-  }
-
-  async function getTargetTime() {
-    const now = await getTallinnTime();
-    const target = new Date(now);
-    target.setHours(targetHour, 0, 0, 0); // Set to 23:00
-
-    if (now > target) {
-      target.setDate(target.getDate() + 1); // If past 23:00, go to tomorrow
-    }
-
-    return target;
-  }
-
-  async function updateCountdown() {
-    const now = await getTallinnTime();
-    const target = await getTargetTime();
-
-    const timeLeft = target - now;
-
-    if (timeLeft <= 0) {
-      document.getElementById("countdown").innerText = "Time's up!";
-      clearInterval(timer);
-      return;
-    }
-
-    const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
-    const seconds = Math.floor((timeLeft / 1000) % 60);
-
-    document.getElementById("countdown").innerText =
-      `${hours}h ${minutes}m ${seconds}s`;
-  }
-
-  updateCountdown();
-  const timer = setInterval(updateCountdown, 1000);
-</script>
-
+  <script>
+    // Force everything to use Europe/Tallinn time
+    const targetHour = 23; // 23:00 Tallinn time
   
+    async function getTallinnTime() {
+      const now = new Date();
+      const tallinnTime = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Europe/Tallinn",
+        hour12: false,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      }).format(now);
+  
+      const [date, time] = tallinnTime.split(", ");
+      const [month, day, year] = date.split("/");
+      const [hour, minute, second] = time.split(":");
+  
+      return new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}+03:00`);
+    }
+  
+    async function getTargetTime() {
+      const now = await getTallinnTime();
+      const target = new Date(now);
+      target.setHours(targetHour, 0, 0, 0); // Set to 23:00
+  
+      // If the target time has passed for today, use tomorrow
+      if (target < now) {
+        target.setDate(target.getDate() + 1);
+      }
+  
+      return target;
+    }
+  
+    async function updateCountdown() {
+      const now = await getTallinnTime();
+      const target = await getTargetTime();
+      const diff = target - now;
+  
+      if (diff <= 0) {
+        document.getElementById("countdown").innerText = "The Easter Event has started!";
+        document.getElementById("outroMusic").play();
+        return;
+      }
+  
+      const totalSeconds = Math.floor(diff / 1000);
+      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+  
+      document.getElementById("countdown").innerText = 
+        `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  
+      setTimeout(updateCountdown, 1000);
+    }
+  
+    updateCountdown();
+  </script>  
 
 </body>
 </html>
