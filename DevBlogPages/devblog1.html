@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bubble Gum Simulator INFINITY – Easter Event</title>
-  <!-- Add inside <head> -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Bubble Gum Simulator INFINITY – Release</title>
 
   <!-- Open Graph Meta Tags (for Discord and other platforms) -->
-  <meta property="og:title" content="Bubble Gum Simulator INFINITY – Easter Event" />
+  <meta property="og:title" content="Bubble Gum Simulator INFINITY – Release" />
   <meta property="og:description" content="Bubble Gum Simulator INFINITY is out now! Play now and experience the bubble popping fun!" />
   <meta property="og:image" content="https://i.imgur.com/51Jh9Z3.png" />
   <meta property="og:url" content="https://urmoit.github.io/bgsi-release-date-countdown/" />
@@ -18,11 +16,10 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TanUrmo" />
-  <meta name="twitter:title" content="Bubble Gum Simulator INFINITY – Easter Event" />
+  <meta name="twitter:title" content="Bubble Gum Simulator INFINITY – Release" />
   <meta name="twitter:description" content="Bubble Gum Simulator INFINITY is out now! Play now and experience the bubble popping fun!" />
   <meta name="twitter:image" content="https://i.imgur.com/51Jh9Z3.png" />
   <meta name="twitter:url" content="https://urmoit.github.io/bgsi-release-date-countdown/" />
-
   <style>
     * {
       margin: 0;
@@ -40,6 +37,8 @@
       justify-content: center;
       padding: 40px 10px;
       flex-direction: column;
+      overflow-x: hidden;
+      margin: 0;
     }
 
     .container {
@@ -49,6 +48,7 @@
       max-width: 700px;
       width: 100%;
       text-align: center;
+      margin-top: 2300px; /* slightly more than the height of announcement */
       backdrop-filter: blur(12px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -70,26 +70,13 @@
       color: #ff4ae5;
     }
 
+    .highlight2 {
+      color: #FFD700;
+    }
+
     p {
       margin-bottom: 20px;
-      font-size: 1.2rem;
-    }
-
-    #playButton {
-      padding: 15px 40px;
-      background: linear-gradient(135deg, #ff4ae5, #ff82f1);
-      font-size: 1.2rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 16px rgba(255, 74, 229, 0.4);
-    }
-
-    #playButton:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #ff6eee, #ffa3f3);
+      font-size: 1.9rem;
     }
 
     iframe {
@@ -130,30 +117,14 @@
     }
 
     .dev-blog-post h3 {
-      font-size: 1.8rem;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
 
     .dev-blog-post p {
-      font-size: 1rem;
+      font-size: 2rem;
       margin-bottom: 15px;
     }
-
-    .dev-blog-post button {
-      margin-top: 10px;
-      padding: 8px 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .dev-blog-post button:hover {
-      background-color: #45a049;
-    }
-
 
     @keyframes fadeInUp {
       from {
@@ -170,6 +141,7 @@
       position: fixed;
       top: 0;
       left: 50%;
+      right: 0;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
       color: #fff;
@@ -178,11 +150,13 @@
       border-bottom-right-radius: 10px;
       font-size: 0.95rem;
       line-height: 1.4;
-      z-index: 999;
+      z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
       max-width: 100%;
       width: fit-content;
+      height: 60px; /* or whatever value it is */
+      position: fixed;
     }
 
     @media (max-width: 600px) {
@@ -224,22 +198,6 @@
       pointer-events: none;
     }
 
-    #countdown {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      padding: 25px 35px;
-      border: 3px solid #ff4ae5;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px rgba(255, 74, 229, 0.35);
-      display: inline-block;
-      color: #ffffff;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      letter-spacing: 1px;
-      animation: pulseGlow 2s infinite;
-    }
 
     @keyframes pulseGlow {
       0%, 100% {
@@ -259,92 +217,77 @@
   </div>
 
   <div class="container">
-    <img src="your-logo.png" alt="Game Logo" class="logo" />
-    <h1>Bubble Gum Simulator <span class="highlight">INFINITY</span> – Easter Event</h1>
-    <div id="countdown">Loading countdown...</div>
-    <button id="playButton" onclick="window.location.href='https://www.roblox.com/games/85896571713843/Bubble-Gum-Simulator-INFINITY'">Play Now</button>
-    <p>This website is not related to Rumble Studio. If someone from Rumble Studio does not like it, please let me know and I will take the page down.</p>
-    <p>Discord User: <span class="highlight">chosentechies</span></p>
+    <img src="imgaes/your-logo.png" alt="Game Logo" class="logo" />
+    <h1>Devblog 1 - <span class="highlight">Easter Event</span></h1>
   </div>
-
-  <div class="credit">
-    Made by <span class="highlight">Urmoit</span>. Not related to Rumble Studio.<br/>
-    If you clone and modify this site, please give credit to <span class="highlight">Urmoit</span> for making the site open source.
-  </div>    
 
   <div class="dev-blog-container">
-    <h2>Dev Blogs</h2>
+    <div class="dev-blog-post">
+      <h3>🐰 Easter has arrived at Bubble Gum Simulator Infinity!</h3>
+    </div>
 
     <div class="dev-blog-post">
-      <h3>Dev Blog #1: Easter Event</h3>
-      <p>X</p>
-      <button onclick="window.location.href='DevBlogPages/devblog1.html'">Read More</button>
+      <h3>Participate in a <span class="highlight">SPECIAL EGG HUNT</span>!</h3>
+      <p>Collect 10 unique eggs hidden throughout the overworld!</p>
+      <img src="imgaes/easter event/hunt.png" alt="Easter Event" class="logo">
+    </div>
+
+    <div class="dev-blog-post">
+      <h3>Two <span class="highlight2">limited time</span> eggs</h3>
+      <p>... With over 20 new pets</p>
+      <img src="imgaes/easter event/eater egg 1.png" alt="Easter Egg" class="logo">
+      <img src="imgaes/easter event/eater egg 2.png" alt="Easter Egg" class="logo">
+      <p>Can spawn on limited time event rifts!</p>
+    </div>
+
+    <div class="dev-blog-post">
+      <h3>🧪 New enchantment options 🧪</h3>
+      <p>Never miss a team up V again!</p>
+      <img src="imgaes/easter event/encahnts.png" alt="new enchantment" class="logo">
+      <p>- 7 New Masteries!</p>
+      <p>- Auto Enchant</p>
+      <p>- Enchant safety</p>
+      <p>- 3 New enchants rift</p>
+      <p>- Notifications</p>
+
+    </div>
+
+    <div class="dev-blog-post">
+      <h3>⚙️ Changes & Fixes ⚙️</h3>
+      <p>
+        - CHANGES & FIXES<br>
+        - SPECIAL EVENT INDEX<br>
+        - GEM CAP INCREASED TO 100,000,000<br>
+        - RENAME PET TEAMS<br>
+        - HOURLY & DAILY SEASON BONUS POINT INCREASE<br>
+        - AURA & ROYAL CHEST 2X SPAWN RATE<br>
+        - SECRET PET SIZE INCREASED BY +50%<br>
+        - WORLD MAP CLAIM BUTTON FOR VIP CHEST<br>
+        - DAILY SHOP ITEM BUFFS TO BE MORE REWARDING<br>
+        - FIXED BUBBLES SELLING OVER CAP<br>
+        - FIXED INFINITY EGG<br>
+        - FIXED HIDE PETS NOT WORKING AS INTENDED<br>
+        - FIXED SHINY EGGS PUSHING PLAYERS<br>
+        - GLOBAL SECRET HATCHES ONLY DISPLAY FOR YOU<br>
+        - FIXED INFINITY PASS<br>
+        - NEW SETTINGS OPTIONS FOR BETTER USER EXPERIENCE<br>
+        - FIXED BUBBLE SELL EXPLOIT<br>
+        - ... AND MANY OTHER BUGS & PATCHES
+      </p>
+      <p>
+        - OOPS! WE LOST TRACK OF TIME WITH ALL THE FIXES WE'VE MADE OVER? THE WEEK ...<br>
+        - WE WILL BE RELEASING A BONUS<br>
+        - MINI PART 2 UPDATE PART WAY<br>
+        - THROUGH THE WEEK, WHICH WILL SE<br>
+        - AN EASTE? CHALLENGE PASS FO?<br>
+        - YOU TO GRIND WHILE LAITING FO?<br>
+        - THE NEXT UPDATE.
+      </p>
+    </div>
+
+    <div class="dev-blog-post">
+      <h3>❤️ Rumble Studio Team ❤️</h3>
     </div>
   </div>
-
-  <audio id="outroMusic" src="outro.mp3"></audio>
-
-  <script>
-    // Force everything to use Europe/Tallinn time
-    const targetHour = 23; // 23:00 Tallinn time
-  
-    async function getTallinnTime() {
-      const now = new Date();
-      const tallinnTime = new Intl.DateTimeFormat("en-US", {
-        timeZone: "Europe/Tallinn",
-        hour12: false,
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-      }).format(now);
-  
-      const [date, time] = tallinnTime.split(", ");
-      const [month, day, year] = date.split("/");
-      const [hour, minute, second] = time.split(":");
-  
-      return new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}+03:00`);
-    }
-  
-    async function getTargetTime() {
-      const now = await getTallinnTime();
-      const target = new Date(now);
-      target.setHours(targetHour, 0, 0, 0); // Set to 23:00
-  
-      // If the target time has passed for today, use tomorrow
-      if (target < now) {
-        target.setDate(target.getDate() + 1);
-      }
-  
-      return target;
-    }
-  
-    async function updateCountdown() {
-      const now = await getTallinnTime();
-      const target = await getTargetTime();
-      const diff = target - now;
-  
-      if (diff <= 0) {
-        document.getElementById("countdown").innerText = "The Easter Event has started!";
-        document.getElementById("outroMusic").play();
-        return;
-      }
-  
-      const totalSeconds = Math.floor(diff / 1000);
-      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-  
-      document.getElementById("countdown").innerText = 
-        `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-  
-      setTimeout(updateCountdown, 1000);
-    }
-  
-    updateCountdown();
-  </script>  
-
 </body>
 </html>
